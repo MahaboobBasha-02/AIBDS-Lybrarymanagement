@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Library Management System</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <h1>📚 Library Management System</h1>
+    <p>Manage your books easily</p>
+  </header>
+
+  <main>
+    <section class="card">
+      <h2 id="formTitle">Add Book</h2>
+
+      <form id="bookForm">
+        <input type="hidden" id="bookId">
+
+        <label for="title">Book Title</label>
+        <input id="title" type="text" placeholder="Enter book title" required>
+
+        <label for="author">Author</label>
+        <input id="author" type="text" placeholder="Enter author name" required>
+
+        <label for="isbn">ISBN</label>
+        <input id="isbn" type="text" placeholder="Enter unique ISBN" required>
+
+        <label for="quantity">Quantity</label>
+        <input id="quantity" type="number" min="0" step="1" value="1" required>
+
+        <p id="error" role="alert"></p>
+
+        <div class="buttons">
+          <button type="submit" id="saveButton">Add Book</button>
+          <button type="button" id="cancelButton" class="secondary" hidden>
+            Cancel
+          </button>
+        </div>
+      </form>
+    </section>
+
+    <section class="card">
+      <div class="list-heading">
+        <h2>Book List</h2>
+        <input id="search" type="search" placeholder="Search books...">
+      </div>
+
+      <p id="status" role="status"></p>
+
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th>ID</th>
+              <th>Title</th>
+              <th>Author</th>
+              <th>ISBN</th>
+              <th>Quantity</th>
+              <th>Actions</th>
+            </tr>
+          </thead>
+          <tbody id="bookList"></tbody>
+        </table>
+      </div>
+    </section>
+  </main>
+
+  <footer>Library Management System · Frontend CRUD</footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
